@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Document</title>
   </head>
@@ -33,10 +40,40 @@
         <p class="text-[#64748B]"><span>0</span> jobs</p>
       </div>
 
+      <!-- Buttons -->
       <div class="text-[#64748B] text-[12px]">
         <button class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
         <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
         <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+      </div>
+
+      <!-- Job info -->
+      <div id="job-list" class="my-4">
+        <div class="space-y-6 p-6 bg-[#ffffff] rounded-lg">
+          <div class="flex justify-between">
+            <div>
+              <h1>Mobile First Corp</h1>
+              <p>React Native Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <div>
+            <button>Not Applied</button>
+            <p>
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+          </div>
+          <div>
+            <button>INTERVIEW</button>
+            <button>REJECTED</button>
+          </div>
+        </div>
       </div>
     </section>
   </body>
