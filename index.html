@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Document</title>
+    <title>Job Tracker</title>
   </head>
   <body class="max-w-[1110px] mx-auto py-[60px]">
     <header>
@@ -34,20 +34,20 @@
     </header>
     <hr class="text-[#E6E7E9]" />
 
-    <section class="my-[30px]">
-      <div class="flex justify-between mb-6">
-        <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
-        <p class="text-[#64748B]"><span>0</span> jobs</p>
-      </div>
+    <div class="flex justify-between mb-6 my-4 space-y-4">
+      <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
+      <p class="text-[#64748B]"><span>0</span> jobs</p>
+    </div>
 
-      <!-- Buttons -->
-      <div class="text-[#64748B] text-[12px]">
-        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
-        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
-        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
-      </div>
+    <!-- Buttons -->
+    <div class="text-[#64748B] text-[12px]">
+      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
+      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
+      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+    </div>
 
-      <!-- Job info -->
+    <!-- Job info -->
+    <section class="my-[30px] hidden">
       <div id="job-list" class="my-4 space-y-4">
         <!-- Job 01 -->
         <div
@@ -444,5 +444,31 @@
         </div>
       </div>
     </section>
+
+    <!-- Interview -->
+     <section class="my-[30px] hidden">
+        <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
+            <div>
+                <img src="jobs.png" alt="Image of File">
+            </div>
+            <div class="text-center">
+                <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
+                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+            </div>
+        </div>
+     </section>
+
+    <!-- Rejected -->
+     <section class="my-[30px] hidden">
+        <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
+            <div>
+                <img src="jobs.png" alt="Image of File">
+            </div>
+            <div class="text-center">
+                <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
+                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+            </div>
+        </div>
+     </section>
   </body>
 </html>
