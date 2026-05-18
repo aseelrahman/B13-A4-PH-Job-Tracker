@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body class="max-w-[1110px] mx-auto py-[60px]">
+    <header>
+      <h1 class="font-bold text-[#002C5C] text-4xl">Job Application Tracker</h1>
+      <div class="grid grid-cols-3 gap-4 mt-5 mb-[30px]">
+        <div class="p-5 bg-[#ffffff] rounded-lg">
+          <p>Total</p>
+          <div class="text-2xl font-bold text-[#002C5C]">0</div>
+        </div>
+        <div class="p-5 bg-[#ffffff] rounded-lg">
+          <p>Interview</p>
+          <div class="text-2xl font-bold text-[#10B981]">0</div>
+        </div>
+        <div class="p-5 bg-[#ffffff] rounded-lg">
+          <p>Rejected</p>
+          <div class="text-2xl font-bold text-[#EF4444]">0</div>
+        </div>
+      </div>
+    </header>
+    <hr class="text-[#E6E7E9]" />
+
+    <section class="my-[30px]">
+      <div class="flex justify-between mb-6">
+        <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
+        <p class="text-[#64748B]"><span>0</span> jobs</p>
+      </div>
+
+      <div class="text-[#64748B] text-[12px]">
+        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
+        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
+        <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+      </div>
+    </section>
+  </body>
+</html>
