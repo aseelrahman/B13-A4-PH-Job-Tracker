@@ -20,7 +20,7 @@
       <div class="grid grid-cols-3 gap-4 mt-5 mb-[30px]">
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Total</p>
-          <div  class="text-2xl font-bold text-[#002C5C]">0</div>
+          <div id="job-count" class="text-2xl font-bold text-[#002C5C]">0</div>
         </div>
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Interview</p>
@@ -36,14 +36,41 @@
 
     <div class="flex justify-between mb-6 my-4 space-y-4">
       <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
-      <p class="text-[#64748B]"><span id="job-count">0</span> jobs</p>
+      <p class="text-[#64748B]"><span>0</span> jobs</p>
     </div>
 
     <!-- Buttons -->
     <div class="text-[#64748B] text-[12px]">
-      <button id="btn-all" onclick="btnActive('all'); showOnly('jobs')" class="w-20 h-8 rounded-lg bg-[#3B82F6] text-white">All</button>
-      <button id="btn-interview" onclick="btnActive('interview'); showOnly('interview')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
-      <button id="btn-rejected" onclick="btnActive('rejected'); showOnly('rejected')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+      <button
+        id="btn-all"
+        onclick="
+          btnActive('all');
+          showOnly('jobs');
+        "
+        class="w-20 h-8 rounded-lg bg-[#3B82F6] text-white"
+      >
+        All
+      </button>
+      <button
+        id="btn-interview"
+        onclick="
+          btnActive('interview');
+          showOnly('interview');
+        "
+        class="w-20 h-8 rounded-lg bg-[#ffffff]"
+      >
+        Interview
+      </button>
+      <button
+        id="btn-rejected"
+        onclick="
+          btnActive('rejected');
+          showOnly('rejected');
+        "
+        class="w-20 h-8 rounded-lg bg-[#ffffff]"
+      >
+        Rejected
+      </button>
     </div>
 
     <!-- Job info -->
@@ -75,7 +102,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -85,12 +112,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -124,7 +151,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -134,12 +161,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+           <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -173,7 +200,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -183,12 +210,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -222,7 +249,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -232,12 +259,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -271,7 +298,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -282,12 +309,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -321,7 +348,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -332,12 +359,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -369,7 +396,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -380,12 +407,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -419,7 +446,7 @@
           </div>
           <div>
             <button
-              class="py-2 px-3 text text-[#002C5C] bg-[#EEF4FF] rounded-sm"
+              class="job-status hidden py-2 px-3 text-[#002C5C] bg-[#EEF4FF] rounded-sm"
             >
               Not Applied
             </button>
@@ -430,12 +457,12 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button
+            <button onclick="status(this, 'interview')"
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button
+            <button onclick="status(this, 'rejected')"
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -446,32 +473,40 @@
     </section>
 
     <!-- Interview -->
-     <section id="interview" class="my-[30px] hidden">
-        <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
-            <div>
-                <img src="jobs.png" alt="Image of File">
-            </div>
-            <div class="text-center">
-                <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
-                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
-            </div>
+    <section id="interview" class="my-[30px] hidden">
+      <div
+        class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5"
+      >
+        <div>
+          <img src="jobs.png" alt="Image of File" />
         </div>
-     </section>
+        <div class="text-center">
+          <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
+          <p class="text-[#64748B]">
+            Check back soon for new job opportunities
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Rejected -->
-     <section id="rejected" class="my-[30px] hidden">
-        <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
-            <div>
-                <img src="jobs.png" alt="Image of File">
-            </div>
-            <div class="text-center">
-                <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
-                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
-            </div>
+    <section id="rejected" class="my-[30px] hidden">
+      <div
+        class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5"
+      >
+        <div>
+          <img src="jobs.png" alt="Image of File" />
         </div>
-     </section>
+        <div class="text-center">
+          <h1 class="text-[#002C5C] font-bold text-2xl">No jobs available</h1>
+          <p class="text-[#64748B]">
+            Check back soon for new job opportunities
+          </p>
+        </div>
+      </div>
+    </section>
 
-     <script src="js/jobList.js"></script>
-     <script src="js/sharedFunction.js"></script>
+    <script src="js/jobList.js"></script>
+    <script src="js/sharedFunction.js"></script>
   </body>
 </html>
