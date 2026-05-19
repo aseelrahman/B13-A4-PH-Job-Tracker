@@ -24,11 +24,15 @@
         </div>
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Interview</p>
-          <div id="interview-count" class="text-2xl font-bold text-[#10B981]">0</div>
+          <div id="interview-count" class="text-2xl font-bold text-[#10B981]">
+            0
+          </div>
         </div>
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Rejected</p>
-          <div id="reject-count" class="text-2xl font-bold text-[#EF4444]">0</div>
+          <div id="reject-count" class="text-2xl font-bold text-[#EF4444]">
+            0
+          </div>
         </div>
       </div>
     </header>
@@ -66,6 +70,7 @@
         onclick="
           btnActive('rejected');
           showOnly('rejected');
+          statusTab();
         "
         class="w-20 h-8 rounded-lg bg-[#ffffff]"
       >
@@ -78,7 +83,8 @@
       <div id="job-list" class="my-4 space-y-4">
         <!-- Job 01 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -112,12 +118,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -127,7 +141,8 @@
 
         <!-- Job 02 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class=" job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -161,12 +176,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-           <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -176,7 +199,8 @@
 
         <!-- Job 03 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -210,12 +234,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -225,7 +257,8 @@
 
         <!-- Job 04 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -259,12 +292,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -274,7 +315,8 @@
 
         <!-- Job 05 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -309,12 +351,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -324,7 +374,8 @@
 
         <!-- Job 06 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -359,12 +410,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -374,7 +433,8 @@
 
         <!-- Job 07 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class="job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -407,12 +467,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
@@ -422,7 +490,8 @@
 
         <!-- Job 08 -->
         <div
-          class="space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
+          data-status="all"
+          class=" job-card space-y-6 p-6 bg-[#ffffff] rounded-lg hover:translate-y-1 transition-all duration-200 border-s-4 border-[#bcc6d2]"
         >
           <div class="flex justify-between">
             <div>
@@ -457,12 +526,20 @@
             </p>
           </div>
           <div class="mt-5 flex gap-2">
-            <button onclick="status(this, 'interview'); statusList()"
+            <button
+              onclick="
+                status(this, 'interview');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#10B981] hover:bg-[#10B981] hover:text-white border-2 border-[#10B981] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               INTERVIEW
             </button>
-            <button onclick="status(this, 'rejected'); statusList()"
+            <button
+              onclick="
+                status(this, 'rejected');
+                statusList();
+              "
               class="py-2 px-3 text-[14px] text-[#EF4444] hover:bg-[#EF4444] hover:text-white border-2 border-[#EF4444] rounded-sm transition-all duration-200 hover:scale-105 ease-in-out"
             >
               REJECTED
