@@ -1,19 +1,28 @@
 function showOnly(id){
-    const jobs = document.getElementById('jobs');
-    const interview = document.getElementById('interview');
-    const rejected = document.getElementById('rejected');
+    
+    let count = 0;
+    const cards = document.getElementsByClassName('job-card');
 
-    jobs.classList.add("hidden");
-    interview.classList.add("hidden");
-    rejected.classList.add("hidden");
-
-
-    document.getElementById(id).classList.remove("hidden");
+    for(const card of cards){
+        if(card.dataset.status === id || id === 'all'){
+            count++;
+            card.classList.remove('hidden');
+        }
+        else{
+            card.classList.add('hidden');
+        }
+    }
+    if(count === 0){
+        document.getElementById('empty').classList.remove('hidden')
+    }
+    else{
+        document.getElementById('empty').classList.add('hidden')
+    }
 
 }
 
 function btnActive(btn){
-
+    currentTab = btn;
     const btnAll = document.getElementById('btn-all');
     const btnInterview = document.getElementById('btn-interview');
     const btnRejected = document.getElementById('btn-rejected');
