@@ -41,9 +41,9 @@
 
     <!-- Buttons -->
     <div class="text-[#64748B] text-[12px]">
-      <button id="btn-all" onclick="showOnly('jobs')" class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
-      <button id="btn-interview" onclick="showOnly('interview')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
-      <button id="btn-rejected" onclick="showOnly('rejected')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+      <button id="btn-all" onclick="btnActive('all'); showOnly('jobs')" class="w-20 h-8 rounded-lg bg-[#3B82F6] text-white">All</button>
+      <button id="btn-interview" onclick="btnActive('interview'); showOnly('interview')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
+      <button id="btn-rejected" onclick="btnActive('rejected'); showOnly('rejected')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
     </div>
 
     <!-- Job info -->

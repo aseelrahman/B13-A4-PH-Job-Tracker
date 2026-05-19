@@ -10,36 +10,27 @@ function showOnly(id){
 
     document.getElementById(id).classList.remove("hidden");
 
-    btnActive();
 }
 
-function btnActive(){
+function btnActive(btn){
+
     const btnAll = document.getElementById('btn-all');
     const btnInterview = document.getElementById('btn-interview');
     const btnRejected = document.getElementById('btn-rejected');
 
-    btnAll.addEventListener('click', function(){
-        btnAll.style.backgroundColor = `#3B82F6`
-        btnAll.style.color = `#ffffff`
-        btnInterview.style.backgroundColor = `#ffffff`
-        btnInterview.style.color = `#64748B`
-        btnRejected.style.backgroundColor = `#ffffff`
-        btnRejected.style.color = `#64748B`
-    })
-    btnInterview.addEventListener('click', function(){
-        btnInterview.style.backgroundColor = `#3B82F6`
-        btnInterview.style.color = `#ffffff`
-        btnAll.style.backgroundColor = `#ffffff`
-        btnAll.style.color = `#64748B`
-        btnRejected.style.backgroundColor = `#ffffff`
-        btnRejected.style.color = `#64748B`
-    })
-    btnRejected.addEventListener('click', function(){
-        btnAll.style.backgroundColor = `#ffffff`
-        btnAll.style.color = `#64748B`
-        btnInterview.style.backgroundColor = `#ffffff`
-        btnInterview.style.color = `#64748B`
-        btnRejected.style.backgroundColor = `#3B82F6`
-        btnRejected.style.color = `#ffffff`
-    })
+    btnAll.className = "w-20 h-8 rounded-lg bg-white text-[#64748B]";
+    btnInterview.className = "w-20 h-8 rounded-lg bg-white text-[#64748B]";
+    btnRejected.className = "w-20 h-8 rounded-lg bg-white text-[#64748B]";
+
+    if(btn == 'all'){
+        btnAll.className = "w-20 h-8 rounded-lg bg-[#3B82F6] text-white";
+    }
+
+    if(btn == 'interview'){
+        btnInterview.className = "w-20 h-8 rounded-lg bg-[#3B82F6] text-white";
+    }
+
+    if(btn == 'rejected'){
+        btnRejected.className = "w-20 h-8 rounded-lg bg-[#3B82F6] text-white";
+    }
 }
