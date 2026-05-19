@@ -20,7 +20,7 @@
       <div class="grid grid-cols-3 gap-4 mt-5 mb-[30px]">
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Total</p>
-          <div class="text-2xl font-bold text-[#002C5C]">0</div>
+          <div  class="text-2xl font-bold text-[#002C5C]">0</div>
         </div>
         <div class="p-5 bg-[#ffffff] rounded-lg">
           <p>Interview</p>
@@ -36,18 +36,18 @@
 
     <div class="flex justify-between mb-6 my-4 space-y-4">
       <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
-      <p class="text-[#64748B]"><span>0</span> jobs</p>
+      <p class="text-[#64748B]"><span id="job-count">0</span> jobs</p>
     </div>
 
     <!-- Buttons -->
     <div class="text-[#64748B] text-[12px]">
-      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
-      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
-      <button class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
+      <button id="btn-all" onclick="showOnly('jobs')" class="w-20 h-8 rounded-lg bg-[#ffffff]">All</button>
+      <button id="btn-interview" onclick="showOnly('interview')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Interview</button>
+      <button id="btn-rejected" onclick="showOnly('rejected')" class="w-20 h-8 rounded-lg bg-[#ffffff]">Rejected</button>
     </div>
 
     <!-- Job info -->
-    <section class="my-[30px] hidden">
+    <section id="jobs" class="my-[30px]">
       <div id="job-list" class="my-4 space-y-4">
         <!-- Job 01 -->
         <div
@@ -446,7 +446,7 @@
     </section>
 
     <!-- Interview -->
-     <section class="my-[30px] hidden">
+     <section id="interview" class="my-[30px] hidden">
         <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
             <div>
                 <img src="jobs.png" alt="Image of File">
@@ -459,7 +459,7 @@
      </section>
 
     <!-- Rejected -->
-     <section class="my-[30px] hidden">
+     <section id="rejected" class="my-[30px] hidden">
         <div class="h-[400px] bg-[#ffffff] rounded-lg flex flex-col justify-center items-center gap-5">
             <div>
                 <img src="jobs.png" alt="Image of File">
@@ -470,5 +470,8 @@
             </div>
         </div>
      </section>
+
+     <script src="js/jobList.js"></script>
+     <script src="js/sharedFunction.js"></script>
   </body>
 </html>
