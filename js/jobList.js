@@ -3,8 +3,11 @@ let currentTab ='all';
 function jobCount(){
     const jobs = document.getElementById('job-list').childElementCount;
     
-    const totalJobCount = document.getElementById('job-count');
-    totalJobCount.innerText = jobs;
+    const totalJobCount = document.getElementsByClassName('job-count');
+    for(const count of totalJobCount){
+
+        count.innerText = jobs;
+    }
 
 }
 
@@ -29,6 +32,7 @@ function status(button, decision){
     }  
     
     showOnly(currentTab);
+    count();
 }
 
 function statusList(){
