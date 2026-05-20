@@ -43,3 +43,11 @@ function btnActive(btn){
         btnRejected.className = "w-20 h-8 rounded-lg bg-[#3B82F6] text-white";
     }
 }
+
+function deleteBtn(button){
+    button.parentNode.parentNode.remove()
+
+    jobCount()
+    statusList()
+    
+}

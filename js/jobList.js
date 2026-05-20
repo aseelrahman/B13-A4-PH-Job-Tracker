@@ -40,9 +40,4 @@ function statusList(){
 
     const rejectCount = document.getElementById('reject-count');
     rejectCount.textContent = rejectList.length;
-
-    // for(const interview of interviewList){
-    //     console.log(interview);
-        
-    // }
 }
